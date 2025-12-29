@@ -410,6 +410,69 @@ footer{background:var(--primary);color:#cbd5e1;padding:60px 0;text-align:center;
     </div>
   </div>
 </section>
+<section id="partners" style="padding:100px 0; background:#ffffff;">
+  <div class="container">
+
+    <h2 style="font-size:40px; font-weight:800; text-align:center; color:var(--dark); margin-bottom:50px;">
+      Trusted <span style="color:var(--accent);"> Partners</span>
+    </h2>
+
+    <div class="image-rotator">
+      <div class="image-track">
+
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=500" alt="Hospital">
+        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=500" alt="Medical Care">
+        <img src="https://images.unsplash.com/photo-1600959907703-125ba1374a12?w=500" alt="Family Care">
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=500" alt="Hospital">
+        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=500" alt="Medical Care">
+        <img src="https://images.unsplash.com/photo-1600959907703-125ba1374a12?w=500" alt="Family Care">
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<style>.image-rotator{
+  overflow:hidden;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.image-track{
+  display:flex;
+  gap:30px;
+  transition:transform .8s ease;
+}
+
+.image-track img{
+  width:300px;
+  height:200px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+  flex-shrink:0;
+}
+
+</style>
+<!-- JS -->
+ <script>
+const imageTrack = document.querySelector('.image-track');
+let imageIndex = 0;
+
+setInterval(() => {
+  const images = document.querySelectorAll('.image-track img');
+  const imageWidth = images[0].offsetWidth + 30;
+
+  imageIndex++;
+
+  if(imageIndex >= images.length - 2){
+    imageIndex = 0;
+  }
+
+  imageTrack.style.transform = `translateX(-${imageIndex * imageWidth}px)`;
+}, 3000);
+</script>
+
 <!-- CONTACT FORM WITH SUCCESS MESSAGE -->
 <section id="contact" style="background:#f5f7fb; padding:100px 0;">
   <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:60px; align-items:center;">
@@ -470,7 +533,6 @@ footer{background:var(--primary);color:#cbd5e1;padding:60px 0;text-align:center;
   </div>
 </section>
 
-<!-- JS -->
 <script>
 // Sidebar toggle
 const hamburger=document.querySelector('.hamburger');
